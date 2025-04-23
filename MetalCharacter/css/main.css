@@ -1,0 +1,101 @@
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 167px;
+    max-height: 302px;
+}
+p{
+    text-align: center;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #8e44ad, #ff00ff, #5e00cc);
+    /*background: linear-gradient(135deg, #ffea00, #ffd700, #ffcc00);*/
+    /* Ajusta los colores como desees */
+    background-size: 300% 300%;
+    animation: gradientAnimation 8s infinite alternate;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+
+}
+h1 {
+    text-shadow: 
+        0 0 10px #ffff00, 
+        0 0 20px #ffff00, 
+        0 0 30px #ffd700, 
+        0 0 40px #ffd700;
+}
+
+h1::before {
+    content: '*';
+    color: gold;
+    margin-right: 5px;
+}
+
+h1::after {
+    content: '*';
+    color: gold;
+    margin-right: 5px;
+}
+
+
+.encabezado {
+    margin: 150px 0px;
+    color: white;
+    text-align: center;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.card{
+    background-color: white;
+    width: 200px;
+    height: 400px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: right right ;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.225);
+    overflow: hidden;
+    position: relative;
+}
+
+.wrapper:hover .card:not(:hover)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad del 50% */
+    pointer-events: none; /* Permite interactuar con las tarjetas activas */
+    border-radius: 12px; /* Coincide con el borde redondeado de las*/
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
